@@ -1,0 +1,20 @@
+
+/*131044022*/
+NOT :
+ * IntegerValue hem VALUES hem EXPI olabiliyor.
+ * Burada Conflict var
+ * Cozumu : shift edilen token integerValue olursa
+ * parser hem EXPI(1) hem VALUES(0) icin cagirilir.
+ *
+ * Ayni sekilde identifier da hem EXPI hem IDS olabilir
+ * IDLIST -> ( IDS ) | ()
+ * IDS -> IDS  IDENTIFIER |IDENTIFIER
+ * Cozumu : shift edilen token identifier olursa
+ * parser hem EXPI(3) hem IDS(4) icin cagirilir.
+ *
+ * (deffun Id IDLIST EXPLISTI)
+ * Buradaki IDLIST tanimlandi
+ * Ayrica  Id olarak gecen yerler expi'dir ama EXPI icerisinde
+ * tutulan exp arrayindeki deger id ise kabul edilir
+ 
+ * (sum x) EXPI olarak alinir (CALL )
